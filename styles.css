@@ -1,5 +1,6 @@
 :root {
     --color-blue: rgb(33, 61, 129);
+    --color-light: rgb(99, 127, 184);
 }
 * {
     margin: 0;
@@ -9,10 +10,10 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: white;
     text-align: center;
     font-family: Arial, sans-serif;
 }
@@ -140,7 +141,85 @@ body {
     position: absolute;
     bottom: 8px;
     font-size: 1.2rem;
+    color: black;
 }
+/*slides*/
+.home-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px; /* Asegura que sea un círculo perfecto */
+    height: 50px; /* Igual al width para mantener la forma circular */
+    border-radius: 50%;
+    border: 2px solid var(--color-blue);
+    background-color: white;
+    color: var(--color-blue);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.home-btn:hover, .next-btn:hover {
+    background-color: var(--color-blue);
+    color: white;
+}
+.slide-counter {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color:var(--color-light);
+}
+.num-big {
+    font-size: 3rem;
+    color:var(--color-blue);
+    position: relative;
+    top: 10px;
+}
+.image-center {
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 70%;
+    height: auto; /* Asegura que el contenedor ocupa toda la altura disponible */
+    position: absolute;
+}
+.image-center img {
+    max-width: 100%; /* Evita que se desborde */
+    max-height: 50vh;
+    height: auto;
+}
+.next-btn {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    font-size: 32px;
+    text-decoration: none;
+    color: var(--color-blue);;
+    border: 2px solid var(--color-blue);;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+.info-box {
+    width: 60%;
+    height: 100px;
+    margin: 30px auto;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0px;
+}
+
 @media (max-width: 768px) {
     .tech-inno {
         font-size: 3rem;
@@ -175,5 +254,8 @@ body {
     .activity-name {
         bottom: 8px;
         font-size: 0.8rem;
+    }
+    .info-box {
+        font-size: 1rem;
     }
 }

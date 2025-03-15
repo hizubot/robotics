@@ -3,7 +3,7 @@ function changeTitle() {
     document.getElementById("slide-device").style.display = "flex";
 }
 window.onload = function() {
-    setTimeout(changeTitle, 2000);
+    setTimeout(changeTitle, 200);
 };
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".device:nth-child(3)").addEventListener("click", function () {
