@@ -1,0 +1,131 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+#slide-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe toda la pantalla */
+    text-align: center;
+}
+.tech-inno {
+    font-size: 5rem;
+    font-weight: bold;
+}
+.logo-markham {
+    margin-top: 60px;
+    width: 300px;
+    height: auto;
+}
+.slide {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+#slide-device {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.divider {
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    margin-top: 30px;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+    height: auto;
+}
+.image-container .cpi {
+    width: 230px;
+}
+.image-container .mb2 {
+    width: 300px;
+}
+.button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid gray;
+    border-radius: 25px;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+.device:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+.device:hover button {
+    background-color: #e0e0e0;
+}
+.activity-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.activity {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid gray;
+    border-radius: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.activity:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .tech-inno {
+        font-size: 3rem;
+    }
+    .logo-markham {
+        width: 250px;
+    }
+    #slide-device {
+        font-size: 1.4rem;
+    }
+    .image-container .cpi {
+        width: 150px;
+    }
+    .image-container .mb2 {
+        width: 200px;
+    }
+    .device {
+        width: 200px;
+    }
+}

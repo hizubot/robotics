@@ -4,126 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robotics</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .tech-inno {
-            margin-top: 60px;
-            font-size: 5rem;
-            font-weight: bold;
-        }
-        .logo-markham {
-            margin-top: 60px;
-            width: 300px;
-            height: auto;
-        }
-        .slide {
-            display: none;
-            width: 100%;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: white;
-        }
-        #select-device {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-        .divider {
-            width: 2px;
-            height: 100%;
-            background-color: black;
-            margin-top: 30px;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 20px;
-            width: 80%;
-            margin-top: 20px;
-        }
-        .image-container .cpi {
-            width: 230px;
-            height: auto;
-        }
-        .image-container .mb2 {
-            width: 300px;
-            height: auto;
-        }
-        .button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: 2px solid gray;
-            border-radius: 25px;
-            background: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .device {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
-        }
-        .device:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-        .device:hover button {
-            background-color: #e0e0e0;
-        }
-        @media (max-width: 768px) {
-            .tech-inno {
-                font-size: 3rem;
-            }
-            .logo-markham {
-                width: 250px;
-            }
-            #select-device {
-                font-size: 1.4rem;
-            }
-            .image-container .cpi {
-                width: 150px;
-            }
-            .image-container .mb2 {
-                width: 200px;
-            }
-            .device {
-                width: 200px;
-            }
-        }
-    </style>
-    <script>
-        function changeTitle() {
-            document.getElementById("main-title").style.display = "none";
-            document.getElementById("select-device").style.display = "flex";
-        }
-        window.onload = function() {
-            setTimeout(changeTitle, 1000);
-        };
-    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>        
 </head>
 <body>
-    <div id="main-title">
+    <div id="slide-title">
         <div class="tech-inno">TECHNOLOGY<br>&<br>INNOVATION</div>
         <img src="srcs/logo.png" alt="Logo" class="logo-markham">
     </div>
-    <div id="select-device" class="slide">
+    <div id="slide-device" class="slide">
         <h1>Select your device</h1>
         <div class="image-container">
             <div class="device">
@@ -135,6 +24,15 @@
                 <img class="mb2" src="srcs/mbot2.png" alt="mbot2">
                 <button class="button">mBot2</button>
             </div>
+        </div>
+    </div>
+    <div id="slide-activities" class="slide">
+        <h1>Tutorial activities</h1>
+        <div class="activity-container">
+            <div class="activity">1</div>
+            <div class="activity">2</div>
+            <div class="activity">3</div>
+            <div class="activity">4</div>
         </div>
     </div>
 </body>
