@@ -139,13 +139,13 @@ function touchMovements() {
         let diffX = e.changedTouches[0].clientX - startX;
         let diffY = e.changedTouches[0].clientY - startY;
 
-        if (diffX < -50) {
+        if (diffX < -200) {
             document.querySelector(".next-btn")?.click();
-        } else if (diffX > 50) {
+        } else if (diffX > 200) {
             document.querySelector(".prev-btn")?.click();
         }
 
-        if (diffY > 150) {
+        if (diffY > 200) {
             document.querySelector(".home-btn")?.click();
         }
     });
