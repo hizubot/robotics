@@ -77,7 +77,6 @@ let currentSlide = 0;
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("slide-total").textContent = slides.length;
     updateSlide();
-    touchMovements();
 });
 
 function updateSlide() {
@@ -125,28 +124,4 @@ function prevSlide() {
         currentSlide--;
         updateSlide();
     }
-}
-
-function touchMovements() {
-    let startX, startY;
-
-    document.addEventListener("touchstart", function (e) {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-    });
-
-    document.addEventListener("touchend", function (e) {
-        let diffX = e.changedTouches[0].clientX - startX;
-        let diffY = e.changedTouches[0].clientY - startY;
-
-        if (diffX < -200) {
-            document.querySelector(".next-btn")?.click();
-        } else if (diffX > 200) {
-            document.querySelector(".prev-btn")?.click();
-        }
-
-        if (diffY > 200) {
-            document.querySelector(".home-btn")?.click();
-        }
-    });
 }
