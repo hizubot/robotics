@@ -274,5 +274,6 @@ body {
     }
     .image-center img {
         max-width: 95vw;
+        max-height: 60vh;
     }
 }
