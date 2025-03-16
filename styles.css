@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Asegura que ocupe toda la pantalla */
+    height: 100vh;
     text-align: center;
 }
 .tech-inno {
@@ -100,14 +100,10 @@ body {
     gap: 20px;
     margin-top: 20px;
 }
-.activity-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
 .activity {
     position: relative;
-    width: 170px;
+    width: calc(60% - 20px);
+    max-width: 170px;
     height: 170px;
     display: flex;
     flex-direction: column;
@@ -144,24 +140,25 @@ body {
     color: black;
 }
 /*slides*/
-.home-btn {
+.home-btn, .next-btn, .prev-btn {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 50px; /* Asegura que sea un círculo perfecto */
-    height: 50px; /* Igual al width para mantener la forma circular */
-    border-radius: 50%;
-    border: 2px solid var(--color-blue);
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-blue);;
     background-color: white;
-    color: var(--color-blue);
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    border: 2px solid var(--color-blue);;
+    border-radius: 50%;
     transition: all 0.3s ease-in-out;
 }
-.home-btn:hover, .next-btn:hover {
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+.home-btn { left: 20px; top: 20px;}
+.home-btn:hover, .next-btn:hover, .prev-btn:hover {
+    transform: scale(1.1);
     background-color: var(--color-blue);
     color: white;
 }
@@ -184,25 +181,14 @@ body {
     display: flex;
     justify-content: center; /* Centra la imagen horizontalmente */
     align-items: center; /* Centra verticalmente */
-    width: 70%;
     height: auto; /* Asegura que el contenedor ocupa toda la altura disponible */
     position: absolute;
+    top: 13%;
+    left: auto;
 }
 .image-center img {
-    max-width: 100%; /* Evita que se desborde */
-    max-height: 50vh;
+    max-height: 65vh;
     height: auto;
-}
-.next-btn {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    font-size: 32px;
-    text-decoration: none;
-    color: var(--color-blue);;
-    border: 2px solid var(--color-blue);;
-    border-radius: 50%;
-    padding: 10px 15px;
 }
 .info-box {
     width: 60%;
@@ -228,8 +214,18 @@ body {
     100% { transform: rotate(0deg); }
 }
 
-.robot-shake {
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 2px gold); }
+    50% { filter: drop-shadow(0 0 30px gold); }
+    100% { filter: drop-shadow(0 0 2px gold); }
+}
+
+.image-shake {
     animation: shake 0.5s infinite ease-in-out;
+}
+
+.image-glow {
+    animation: shake 0.5s infinite ease-in-out, glow 2s infinite ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -243,17 +239,17 @@ body {
         font-size: 1.4rem;
     }
     .image-container .cpi {
-        width: 150px;
+        width: 120px;
     }
     .image-container .mb2 {
-        width: 200px;
+        width: 170px;
     }
     .device {
-        width: 180px;
+        width: 150px;
     }
     .activity {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     .activity-number {
         top: 8px;
@@ -261,13 +257,22 @@ body {
         font-size: 1.6rem;
     }
     .activity-image {
-        width: 66px;
+        width: 60px;
     }
     .activity-name {
         bottom: 8px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     .info-box {
         font-size: 1rem;
+    }
+    .next-btn,.prev-btn {
+        top: 70%;
+    }
+    .image-center {
+        top: 15%;
+    }
+    .image-center img {
+        max-width: 95vw;
     }
 }

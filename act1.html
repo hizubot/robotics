@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activity 1</title>
+    <title>Meet mBot2!</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <button class="home-btn" onclick="window.location.href='index.html'">↑</button>
-    <div class="slide-counter"><span class="num-big">1</span>/12</div>
+    <div class="slide-counter"><span class="num-big" id="slide-number">01</span>/<span id="slide-total">12</span></div>
     <div class="image-center">
-        <img src="srcs/img1_1.png" alt="img1_1" class="robot-shake">
+        <img id="slide-image" src="srcs/img1/img1_1.png" alt="Slide image">
     </div>
-    <a href="ppt2.html" class="next-btn">➜</a>
-    <div class="info-box">
+    <button class="prev-btn" onclick="prevSlide()">←</button>
+    <button class="next-btn" onclick="nextSlide()">→</button>
+    <div class="info-box" id="slide-text">
         This is mBot2, an educational robot!<br>
         What is a robot? Do you know other robots?
     </div>
+    <script src="script1.js"></script>
 </body>
 </html>
