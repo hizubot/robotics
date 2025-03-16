@@ -42,8 +42,8 @@ const slides = [
     },
     {   //Slide 8
         image: "srcs/img1/img1_8.png",
-        text: `Open Setting and activate Block Area Fixed Pattern.<br>
-        Now you always see the available blocks.`,
+        text: `<div>Open Setting and activate <strong>Block Area Fixed Pattern</strong>.<br>
+        Now you always see the available blocks.</div>`,
         shake: false
     },
     {   //Slide 9
