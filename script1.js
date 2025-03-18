@@ -86,6 +86,8 @@ function preloadImages() {
         imageCache[index] = new Image();
         imageCache[index].src = slide.image;
     });
+    const extraImage = new Image();
+    extraImage.src = "srcs/trophy.png";
 }
 
 function updateSlide() {
