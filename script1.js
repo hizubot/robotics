@@ -72,12 +72,21 @@ const slides = [
     },
 ];
 
+const imageCache = [];
 let currentSlide = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("slide-total").textContent = slides.length;
+    preloadImages();
     updateSlide();
 });
+
+function preloadImages() {
+    slides.forEach((slide, index) => {
+        imageCache[index] = new Image();
+        imageCache[index].src = slide.image;
+    });
+}
 
 function updateSlide() {
     const imgElement = document.getElementById("slide-image");

@@ -209,21 +209,6 @@ body {
     bottom: -10px;
 }
 
-.preload-images {
-    background: url('srcs/img1/img1_1.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_2.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_3.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_4.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_5.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_6.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_7.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_8.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_9.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_10.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_11.png') no-repeat -9999px -9999px,
-                url('srcs/img1/img1_12.png') no-repeat -9999px -9999px;
-}
-
 @keyframes shake {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(1deg); }
