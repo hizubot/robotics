@@ -195,7 +195,7 @@ body {
 }
 .info-box {
     width: 60%;
-    height: 100px;
+    height: 15vh;
     margin: 30px auto;
     padding: 15px;
     background: #fff;
@@ -233,25 +233,18 @@ body {
 
 @media (max-width: 1050px) {
     .next-btn,.prev-btn {
-        bottom: 70px;
+        bottom: 9vh;
     }
-    .prev-btn { left: 15px; }
-    .next-btn { right: 15px; }
-    .home-btn { left: 15px; }
+    .prev-btn { left: 5vw; }
+    .next-btn { right: 5vw; }
 }
 
 @media (max-width: 465px) {
-    .info-box {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 350px) {
-    .info-box {
-        height: 120px;
-    }
     .next-btn,.prev-btn {
-        bottom: 180px;
+        bottom: 15vh;
+    }
+    .info-box {
+        height: 25vh;
     }
 }
 
@@ -262,7 +255,13 @@ body {
     .slide-counter {
         right: 70px;
     }
-    /*verificar width, quiza si quiza no cambia*/
+    .next-btn,.prev-btn {
+        bottom: 15vh;
+    }
+    .info-box {
+        height: 25vh;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 935px) and (max-height:1000px) {
