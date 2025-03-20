@@ -72,7 +72,6 @@ const slides = [
 ];
 
 const imageCache = [];
-const videoCache = [];
 let currentSlide = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -87,12 +86,6 @@ function preloadMedia() {
             imageCache[index] = new Image();
             imageCache[index].src = slide.image;
         }
-        //eliminar si no es util igual el const
-        if (slide.video) {
-            videoCache[index] = document.createElement("video");
-            videoCache[index].src = slide.video;
-            videoCache[index].preload = "auto";
-        }
     });
     const extraImage = new Image();
     extraImage.src = "srcs/trophy.png";
@@ -105,14 +98,10 @@ function updateSlide() {
 
     if (currentSlideData.video) {
         if (!mediaElement || mediaElement.tagName !== "VIDEO") {
-            container.innerHTML = `<video id="slide-media" autoplay loop muted></video>`;
+            container.innerHTML = `<video id="slide-media" autoplay loop muted playsinline></video>`;
             mediaElement = document.getElementById("slide-media");
         }
         mediaElement.src = currentSlideData.video;
-        mediaElement.autoplay = true;
-        mediaElement.loop = true;
-        mediaElement.muted = true;
-        mediaElement.playsInline = true;
     } 
     else if (currentSlideData.image) {
         if (!mediaElement || mediaElement.tagName !== "IMG") {
