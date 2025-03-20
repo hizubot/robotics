@@ -109,6 +109,10 @@ function updateSlide() {
             mediaElement = document.getElementById("slide-media");
         }
         mediaElement.src = currentSlideData.video;
+        mediaElement.autoplay = true;
+        mediaElement.loop = true;
+        mediaElement.muted = true;
+        mediaElement.playsInline = true;
     } 
     else if (currentSlideData.image) {
         if (!mediaElement || mediaElement.tagName !== "IMG") {
