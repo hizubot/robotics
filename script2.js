@@ -1,71 +1,70 @@
 const slides = [
     {   //Slide 1
-        image: "srcs/img1/img1_1.png",
-        text: `This is mBot2, an educational robot!<br>
-        What is a robot? Do you know other robots?`,
-        className: "anim-shake"
+        image: "srcs/img2/img2_1.png",
+        text: `Learn how to drive the mBot2 with precision.`,
+        className: "anim-move-up"
     },
     {   //Slide 2
-        image: "srcs/img1/img1_2.png",
-        text: `Let’s review the principal components of mBot2.<br>
-        How many of them do you recognize?`,
+        video: "srcs/img2/img2_2.mp4",
+        text: `What kind of movements do you know?<br>
+        Can you give more examples?`,
         className: ""
     },
     {   //Slide 3
-        image: "srcs/img1/img1_3.png",
+        image: "srcs/img2/img2_3.png",
         text: `To start coding, turn on your mBot2.<br>
         Remember to turn it off at the end of the class.`,
         className: ""
     },
     {   //Slide 4
-        image: "srcs/img1/img1_4.png",
+        image: "srcs/img2/img2_4.png",
         text: `<div>Open <a href='https://ide.mblock.cc' target='_blank' rel='noopener noreferrer'>mBlock IDE</a>, press <strong>Ctrl+Tab</strong> to return here.<br>
         What is an IDE?</div>`,
         className: ""
     },
     {   //Slide 5
-        image: "srcs/img1/img1_5.png",
+        image: "srcs/img2/img2_5.png",
         text: `This is mBlock IDE.<br>
         Let’s review the principal areas.`,
         className: ""
     },
     {   //Slide 6
-        image: "srcs/img1/img1_6.png",
+        image: "srcs/img2/img2_6.png",
         text: `In the Devices area, Delete CyberPi and Add mBot2.`,
         className: ""
     },
     {   //Slide 7
-        image: "srcs/img1/img1_7.png",
+        image: "srcs/img2/img2_7.png",
         text: `Click Bluetooth, select your mBot2 and Pair.<br>
         You should be in Live mode.`,
         className: ""
     },
     {   //Slide 8
-        image: "srcs/img1/img1_8.png",
+        image: "srcs/img2/img2_8.png",
         text: `<div>Open Setting and activate <strong>Block Area Fixed Pattern</strong>.<br>
         Now you always see the available blocks.</div>`,
         className: ""
     },
     {   //Slide 9
-        image: "srcs/img1/img1_9.png",
+        image: "srcs/img2/img2_9.png",
         text: `Create your mBlock account!<br>
         Click in Panda icon and select Google.`,
         className: ""
     },
     {   //Slide 10
-        image: "srcs/img1/img1_10.png",
+        image: "srcs/img2/img2_10.png",
         text: `Select your Markham account and continue the process.<br>
         You will see your profile icon.`,
         className: ""
     },
     {   //Slide 11
-        image: "srcs/img1/img1_11.png",
+        image: "srcs/img2/img2_11.png",
         text: `<div>Click <strong>play hi until done</strong> block.<br>
         What does mBot2 do?<div>`,
         className: ""
     },
     {   //Slide 12
-        image: "srcs/img1/img1_12.png",
+        image: "srcs/img2/img2_12.png",
         text: `Change the name of your project and click Save.<br>
         There are more options in File menu.`,
         className: ""
@@ -73,43 +72,76 @@ const slides = [
 ];
 
 const imageCache = [];
+const videoCache = [];
 let currentSlide = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("slide-total").textContent = slides.length;
-    preloadImages();
+    preloadMedia();
     updateSlide();
 });
 
-function preloadImages() {
+function preloadMedia() {
     slides.forEach((slide, index) => {
-        imageCache[index] = new Image();
-        imageCache[index].src = slide.image;
+        if (slide.image) {
+            imageCache[index] = new Image();
+            imageCache[index].src = slide.image;
+        }
+        //eliminar si no es util igual el const
+        if (slide.video) {
+            videoCache[index] = document.createElement("video");
+            videoCache[index].src = slide.video;
+            videoCache[index].preload = "auto";
+        }
     });
     const extraImage = new Image();
     extraImage.src = "srcs/trophy.png";
 }
 
 function updateSlide() {
-    const imgElement = document.getElementById("slide-image");
-    imgElement.src = slides[currentSlide].image;
+    const container = document.querySelector(".image-center");
+    let mediaElement = document.getElementById("slide-media");
+    const currentSlideData = slides[currentSlide];
+
+    if (currentSlideData.video) {
+        if (!mediaElement || mediaElement.tagName !== "VIDEO") {
+            container.innerHTML = `<video id="slide-media" autoplay loop muted></video>`;
+            mediaElement = document.getElementById("slide-media");
+        }
+        mediaElement.src = currentSlideData.video;
+    } 
+    else if (currentSlideData.image) {
+        if (!mediaElement || mediaElement.tagName !== "IMG") {
+            container.innerHTML = `<img id="slide-media" alt="Slide media">`;
+            mediaElement = document.getElementById("slide-media");
+        }
+        mediaElement.src = currentSlideData.image;
+    }
 
     let textElement = document.getElementById("slide-text");
-    textElement.innerHTML = slides[currentSlide].text;
+    textElement.innerHTML = currentSlideData.text;
     textElement.style.backgroundColor = "white";
     textElement.style.color = "black";
 
     document.getElementById("slide-number").textContent = String(currentSlide + 1).padStart(2, '0');
-
-    imgElement.className = slides[currentSlide].className || "";
+    mediaElement.className = currentSlideData.className || "";
 }
 
 function endSlide() {
-    const imgElement = document.getElementById("slide-image");
-    imgElement.src = "srcs/trophy.png";
-    imgElement.className = "anim-glow-shake";
+    const container = document.querySelector(".image-center");
+    let mediaElement = document.getElementById("slide-media");
+
+    if (!mediaElement || mediaElement.tagName !== "IMG") {
+        container.innerHTML = `<img id="slide-media" alt="End slide image">`;
+        mediaElement = document.getElementById("slide-media");
+    }
+
+    mediaElement.src = "srcs/trophy.png";
+    mediaElement.className = "anim-glow-shake";
+
     let rootStyles = getComputedStyle(document.documentElement);
     let colorBlue = rootStyles.getPropertyValue("--color-blue").trim();
+
     let textElement = document.getElementById("slide-text");
     textElement.innerHTML = "🎉 Congratulations! 🎉<br>You have successfully completed all the steps! 🚀";
     textElement.style.backgroundColor = colorBlue;
