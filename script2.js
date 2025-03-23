@@ -12,61 +12,91 @@ const slides = [
     },
     {   //Slide 3
         image: "srcs/img2/img2_3.png",
-        text: `To start coding, turn on your mBot2.<br>
-        Remember to turn it off at the end of the class.`,
-        className: ""
+        text: `What makes mBot2 move?`,
+        className: "anim-shake"
     },
     {   //Slide 4
         image: "srcs/img2/img2_4.png",
-        text: `<div>Open <a href='https://ide.mblock.cc' target='_blank' rel='noopener noreferrer'>mBlock IDE</a>, press <strong>Ctrl+Tab</strong> to return here.<br>
-        What is an IDE?</div>`,
+        text: `The mBot2 uses two encoder motors to move!<br>
+        Where else do you find motors?`,
         className: ""
     },
     {   //Slide 5
-        image: "srcs/img2/img2_5.png",
-        text: `This is mBlock IDE.<br>
-        Let’s review the principal areas.`,
+        video: "srcs/img2/img2_5.mp4",
+        text: `Let’s start coding!<br>
+        Create a program that moves forward the mBot2.`,
         className: ""
     },
     {   //Slide 6
         image: "srcs/img2/img2_6.png",
-        text: `In the Devices area, Delete CyberPi and Add mBot2.`,
+        text: `Drag the following blocks to the workspace.<br>
+        What happens when you press the Button A in mBot2?`,
         className: ""
     },
     {   //Slide 7
         image: "srcs/img2/img2_7.png",
-        text: `Click Bluetooth, select your mBot2 and Pair.<br>
-        You should be in Live mode.`,
+        text: `Let’s modify the speed!<br>
+        What happens when you change RPM to 30?<br>
+        What does RPM mean?`,
         className: ""
     },
     {   //Slide 8
-        image: "srcs/img2/img2_8.png",
-        text: `<div>Open Setting and activate <strong>Block Area Fixed Pattern</strong>.<br>
-        Now you always see the available blocks.</div>`,
+        video: "srcs/img2/img2_8.mp4",
+        text: `At same time, more speed is more distance!`,
         className: ""
     },
     {   //Slide 9
         image: "srcs/img2/img2_9.png",
-        text: `Create your mBlock account!<br>
-        Click in Panda icon and select Google.`,
+        text: `Let’s modify the time!<br>
+        What happens when you change secs to 2?`,
         className: ""
     },
     {   //Slide 10
-        image: "srcs/img2/img2_10.png",
-        text: `Select your Markham account and continue the process.<br>
-        You will see your profile icon.`,
+        video: "srcs/img2/img2_10.mp4",
+        text: `At same speed, more time is more distance!`,
         className: ""
     },
     {   //Slide 11
-        image: "srcs/img2/img2_11.png",
-        text: `<div>Click <strong>play hi until done</strong> block.<br>
-        What does mBot2 do?<div>`,
+        video: "srcs/img2/img2_11.mp4",
+        text: `Can mBot2 return to the starting point?`,
         className: ""
     },
     {   //Slide 12
         image: "srcs/img2/img2_12.png",
-        text: `Change the name of your project and click Save.<br>
-        There are more options in File menu.`,
+        text: `Add a new block and change to moves backward.<br>
+        Use the same speed and time.`,
+        className: ""
+    },
+    {   //Slide 13
+        image: "srcs/img2/img2_1.png",
+        text: `Create a program that makes mBot2 turn right.`,
+        className: "anim-rotate"
+    },
+    {   //Slide 14
+        image: "srcs/img2/img2_14.png",
+        text: `Drag the following blocks to the workspace.<br>
+        What happens when you press the Button B in mBot2?`,
+        className: ""
+    },
+    {   //Slide 15
+        video: "srcs/img2/img2_15.mp4",
+        text: `One robot was programmed to turn right and the other turn left.<br>
+        Which mBot2 moves clockwise?`,
+        className: ""
+    },
+    {   //Slide 16
+        image: "srcs/img2/img2_16.png",
+        text: `Change RPM and secs to make mBot2 turn right 90 degrees.`,
+        className: ""
+    },
+    {   //Slide 17
+        image: "srcs/img2/img2_17.png",
+        text: `<div><strong>Challenge:</<strong> Move mBot2 in the following shape.</div>`,
+        className: ""
+    },
+    {   //Slide 18
+        video: "srcs/img2/img2_18.mp4",
+        text: `Can mBot2 do more complex movements?`,
         className: ""
     },
 ];

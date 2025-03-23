@@ -238,6 +238,11 @@ body {
     100% { transform: translateY(0%); opacity: 1;}
 }
 
+@keyframes rotate360 {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
 .anim-shake {
     animation: shake 0.5s infinite ease-in-out;
 }
@@ -246,6 +251,9 @@ body {
 }
 .anim-move-up {
     animation: moveUpDown 4s infinite ease-in-out;
+}
+.anim-rotate {
+    animation: rotate360 4s infinite;
 }
 
 /*para que no choque con iPad*/
